@@ -1,0 +1,43 @@
+1、新建储存库
+git init  //初始化仓库 
+git add .     //添加所有的文件到缓存区
+git commit -m "注释"  //提交
+git branch -M main  //创建分支
+git remote add origin github-url  //添加源
+git push -u origin main //将文件推上git
+
+2、添加现有储存库
+git remote add origin github-url  //添加源
+git add .     //添加所有的文件
+git commit -m "注释"  //提交
+git branch -M main  //选择或创建分支
+git push -u origin man //将文件推上git
+
+查看当前源 git remote -v
+删除当前源 git remote rm origin
+查看当前状态 git status
+查看文件作了什么修改 git diff readme.txt
+查看历史记录 git log
+回退版本 git reset --hard HEAD~num  或者 git reset --hard 1094a(版本号)
+回归最新版本 git reflog  (显示版本号)  然后使用 git reset --hard 1094a(版本号)
+丢弃工作区的修改 git checkout --filename
+撤销暂存区的修改 git reset HEAD filename
+删除文件 git rm
+
+分支
+创建并切换分支 git checkout -b name  或者 git switch -c name 
+查看分支 git branch
+切换分支 git checkout name 或者 git switch name
+合并分支到当前分支 git merge name 合并时  采用 --no-ff 采用普通模式进行合并 合并后的历史有分支
+删除分支 git branch -d name
+查看分支合并图 git log --graph
+
+标签 
+创建标签 git tag v1.0
+查看标签 git tag
+追加标签 git tag v1.0 版本号
+查看标签信息 git show v0.9
+创建带有信息的标签 git tag -a v0.1 -m "带说明的标签" （版本号）
+删除标签 git tag -d v1.0
+删除远程标签（需要先删除本地的） git push origin :refs/tags/v1.0
+把标签推送到远程 git push origin v1.0 或者一次性推送全部 git push origin --tags
